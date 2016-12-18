@@ -15,7 +15,8 @@ private int cont=0;
     private double num2;
     private double res;
     private String operador;
-    private int swOper=0;
+    private int swNum=0;
+    private int swComa=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +30,7 @@ private int cont=0;
     }
 
 public void mostrar(View view){
-    num2 = Double.parseDouble(tViewRes.getText().toString());
+    if(swNum==1){ num2 = Double.parseDouble(tViewRes.getText().toString());
     if(operador.equals("+"))
     {
         res= num1+num2;
@@ -47,27 +48,32 @@ public void mostrar(View view){
         res= num1/num2;
     }
     tViewRes.setText(res+"");
-}
+}}
 
     public void suma(View view)
-    {
+    {if(swNum==1){
         operador="+";
         onClickOperacionCapturaNumero1(view);
+    swComa=0;}
     }
     public void resta(View view)
-    {
+    {if(swNum==1){
         operador="-";
         onClickOperacionCapturaNumero1(view);
+        swComa=0;}
     }
     public void multi(View view)
-    {
+    {if(swNum==1){
         operador="*";
         onClickOperacionCapturaNumero1(view);
+        swComa=0;
+    }
     }
     public void dividir(View view)
-    {
+    {if(swNum==1){
         operador="/";
         onClickOperacionCapturaNumero1(view);
+        swComa=0;}
     }
 
     public void onClickOperacionCapturaNumero1(View view)
@@ -81,51 +87,65 @@ public void mostrar(View view){
         num1=0.0;
         num2=0.0;
         tViewRes.setText("");
+        swNum=0;
+        swComa=0;
     }
 
     public void uno(View view)
     {
         tViewRes.setText(tViewRes.getText() + "1");
+        swNum=1;
     }
     public void dos(View view)
     {
         tViewRes.setText(tViewRes.getText() + "2");
+        swNum=1;
     }
     public void tres(View view)
     {
         tViewRes.setText(tViewRes.getText() + "3");
+        swNum=1;
     }
     public void cuatro(View view)
     {
         tViewRes.setText(tViewRes.getText() + "4");
+        swNum=1;
     }
     public void cinco(View view)
     {
         tViewRes.setText(tViewRes.getText() + "5");
+        swNum=1;
     }
     public void seis(View view)
     {
         tViewRes.setText(tViewRes.getText() + "6");
+        swNum=1;
     }
     public void siete(View view)
     {
         tViewRes.setText(tViewRes.getText() + "7");
+        swNum=1;
     }
     public void ocho(View view)
     {
         tViewRes.setText(tViewRes.getText() + "8");
+        swNum=1;
     }
     public void nueve(View view)
     {
         tViewRes.setText(tViewRes.getText() + "9");
+        swNum=1;
     }
     public void cero(View view)
     {
         tViewRes.setText(tViewRes.getText() + "0");
+        swNum=1;
     }
     public void coma(View view)
-    {
+    {if (swComa==0){
         tViewRes.setText(tViewRes.getText() + ".");
+        swNum=1;
+    swComa=1;}
     }
 
 
