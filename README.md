@@ -17,7 +17,7 @@ Captura
 
 <div align="center">
     <center>
-        <img src="/img/captura.png" width="300">
+        <img src="/img/Captura.png" width="300">
     </center>
     <center>
             <img src="/img/animacion.gif" width="300">
