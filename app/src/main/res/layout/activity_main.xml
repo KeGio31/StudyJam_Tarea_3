@@ -12,11 +12,13 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_toLeftOf="@+id/llAcciones"
-        android:layout_alignParentBottom="true">
+        android:layout_alignParentBottom="true"
+        android:weightSum="3"
+        >
 
         <TextView
             android:id="@+id/tvComa"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/main.tv.coma"
             android:textSize="@dimen/main.tv.num.tamanio"
@@ -25,10 +27,11 @@
             android:paddingBottom="@dimen/main.tv.aba"
             android:background="@color/color.tv.bg.numeros"
             android:gravity="center"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:onClick="coma"/>
         <TextView
             android:id="@+id/tvCero"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/main.tv.cero"
             android:textSize="@dimen/main.tv.num.tamanio"
@@ -37,11 +40,12 @@
             android:paddingBottom="@dimen/main.tv.aba"
             android:background="@color/color.tv.bg.numeros"
             android:gravity="center"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:onClick="cero"/>
 
         <TextView
             android:id="@+id/tvIgual"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/main.tv.igual"
             android:textSize="@dimen/main.tv.num.tamanio"
@@ -50,7 +54,8 @@
             android:paddingBottom="@dimen/main.tv.aba"
             android:background="@color/color.tv.bg.numeros"
             android:gravity="center"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:onClick="mostrar"/>
 
     </LinearLayout>
 
@@ -66,7 +71,8 @@
         android:paddingLeft="@dimen/main.tv.izq"
         android:paddingRight="@dimen/main.tv.der"
         android:background="@color/color.tv.bg.numeros"
-        android:layout_above="@id/llCeros"/>
+        android:layout_above="@id/llCeros"
+        android:onClick="uno"/>
 
     <TextView
         android:id="@+id/tvDos"
@@ -81,7 +87,8 @@
         android:paddingRight="@dimen/main.tv.der"
         android:background="@color/color.tv.bg.numeros"
         android:layout_above="@id/llCeros"
-        android:layout_toRightOf="@id/tvUno"/>
+        android:layout_toRightOf="@id/tvUno"
+        android:onClick="dos"/>
 
     <TextView
         android:id="@+id/tvTres"
@@ -96,7 +103,8 @@
         android:paddingRight="@dimen/main.tv.der"
         android:background="@color/color.tv.bg.numeros"
         android:layout_above="@id/llCeros"
-        android:layout_toRightOf="@id/tvDos"/>
+        android:layout_toRightOf="@id/tvDos"
+        android:onClick="tres"/>
 
     <TextView
         android:id="@+id/tvCuatro"
@@ -110,7 +118,8 @@
         android:paddingLeft="@dimen/main.tv.izq"
         android:paddingRight="@dimen/main.tv.der"
         android:background="@color/color.tv.bg.numeros"
-        android:layout_above="@id/tvUno"/>
+        android:layout_above="@id/tvUno"
+        android:onClick="cuatro"/>
 
     <TextView
         android:id="@+id/tvCinco"
@@ -125,7 +134,8 @@
         android:paddingRight="@dimen/main.tv.der"
         android:background="@color/color.tv.bg.numeros"
         android:layout_toRightOf="@id/tvCuatro"
-        android:layout_above="@id/tvDos"/>
+        android:layout_above="@id/tvDos"
+        android:onClick="cinco"/>
 
     <TextView
         android:id="@+id/tvSeis"
@@ -140,7 +150,8 @@
         android:paddingRight="@dimen/main.tv.der"
         android:background="@color/color.tv.bg.numeros"
         android:layout_toRightOf="@id/tvCinco"
-        android:layout_above="@id/tvTres"/>
+        android:layout_above="@id/tvTres"
+        android:onClick="seis"/>
 
     <TextView
         android:id="@+id/tvSiete"
@@ -154,7 +165,8 @@
         android:paddingLeft="@dimen/main.tv.izq"
         android:paddingRight="@dimen/main.tv.der"
         android:background="@color/color.tv.bg.numeros"
-        android:layout_above="@id/tvCuatro"/>
+        android:layout_above="@id/tvCuatro"
+        android:onClick="siete"/>
 
     <TextView
         android:id="@+id/tvOcho"
@@ -169,7 +181,8 @@
         android:paddingRight="@dimen/main.tv.der"
         android:background="@color/color.tv.bg.numeros"
         android:layout_toRightOf="@id/tvSiete"
-        android:layout_above="@id/tvCinco"/>
+        android:layout_above="@id/tvCinco"
+        android:onClick="ocho"/>
     <TextView
         android:id="@+id/tvNueve"
         android:layout_width="wrap_content"
@@ -183,7 +196,8 @@
         android:paddingRight="@dimen/main.tv.der"
         android:background="@color/color.tv.bg.numeros"
         android:layout_toRightOf="@id/tvOcho"
-        android:layout_above="@id/tvSeis"/>
+        android:layout_above="@id/tvSeis"
+        android:onClick="nueve"/>
 
     <TextView
         android:id="@+id/tvResultado"
@@ -202,7 +216,7 @@
         android:orientation="vertical"
         android:layout_toRightOf="@id/tvNueve"
         android:layout_below="@id/tvResultado">
-        <TextView
+        <Button
             android:id="@+id/tvCE"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -213,9 +227,11 @@
             android:paddingRight="@dimen/main.tv.acc.der"
             android:gravity="center"
             android:layout_weight="1"
-            android:background="@color/color.tv.bg.acciones" />
+            android:background="@color/color.tv.bg.acciones"
+            android:onClick="ce"
+            />
 
-        <TextView
+        <Button
             android:id="@+id/tvDivision"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -226,8 +242,9 @@
             android:paddingRight="@dimen/main.tv.acc.der"
             android:gravity="center"
             android:layout_weight="1"
-            android:background="@color/color.tv.bg.acciones" />
-        <TextView
+            android:background="@color/color.tv.bg.acciones"
+            android:onClick="dividir"/>
+        <Button
             android:id="@+id/tvMultiplicacion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -238,9 +255,10 @@
             android:paddingRight="@dimen/main.tv.acc.der"
             android:gravity="center"
             android:layout_weight="1"
-            android:background="@color/color.tv.bg.acciones" />
+            android:background="@color/color.tv.bg.acciones"
+            android:onClick="multi"/>
 
-        <TextView
+        <Button
             android:id="@+id/tvResta"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -251,9 +269,10 @@
             android:paddingRight="@dimen/main.tv.acc.der"
             android:gravity="center"
             android:layout_weight="1"
-            android:background="@color/color.tv.bg.acciones" />
+            android:background="@color/color.tv.bg.acciones"
+            android:onClick="resta"/>
 
-        <TextView
+        <Button
             android:id="@+id/tvSuma"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -264,7 +283,8 @@
             android:paddingRight="@dimen/main.tv.acc.der"
             android:gravity="center"
             android:layout_weight="1"
-            android:background="@color/color.tv.bg.acciones" />
+            android:background="@color/color.tv.bg.acciones"
+            android:onClick="suma"/>
     </LinearLayout>
 
     <LinearLayout
